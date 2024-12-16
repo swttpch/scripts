@@ -1,0 +1,1 @@
+git branch --merged | grep -vE 'main|develop' >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches && git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
